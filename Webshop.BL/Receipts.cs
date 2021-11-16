@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Webshop.BL
 {
-	public class CustomerRepository
+	public class Receipts
 	{
-		//Retrieve one customer
-
-	}
+        public int ReceiptId { get; private set; }
+    }
 }

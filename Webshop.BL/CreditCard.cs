@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webshop.BL
 {
-	public class OrderItem
+	public class CreditCard
 	{
 
 	}

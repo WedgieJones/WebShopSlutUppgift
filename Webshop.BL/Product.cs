@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webshop.BL
 {
-	class Product
+	public class Product
 	{
 		public Product()
 		{

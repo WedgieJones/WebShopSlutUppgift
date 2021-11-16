@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,7 @@ namespace Webshop.DS
 		{ }
 	}
 
-	class DataSourceJson<T> : IDataSource<T>
+    public class DataSourceJson<T>
 	{
 		private readonly string _path;
 
@@ -34,9 +36,10 @@ namespace Webshop.DS
 			throw new NotImplementedException();
 		}
 
-		public IEnumerable<T> LoadAll()
+		public IEnumerable<T> LoadAll(string path)
 		{
-			throw new NotImplementedException();
+			
+
 		}
 
 		public T LoadById(int id)

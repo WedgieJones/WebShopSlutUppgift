@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webshop.BL
 {
-	class Order
+	public class Order
 	{
 		public Order()
 		{
