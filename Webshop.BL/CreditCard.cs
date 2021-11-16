@@ -8,6 +8,6 @@ namespace Webshop.BL
 {
 	public class CreditCard
 	{
-
-	}
+        public int CreditCardId { get;private set; }
+    }
 }

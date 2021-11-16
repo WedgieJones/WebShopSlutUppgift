@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Webshop.BL
+namespace Webshop.DA
 {
-	public class OrderItem
-	{
-        public int OrderItemId { get; private set; }
-
+    class DataAccess
+    {
     }
 }
