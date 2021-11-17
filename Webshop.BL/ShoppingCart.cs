@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Webshop.BL
 {
-	public class OrderItem
-	{
-        public int OrderItemId { get; private set; }
+    public class ShoppingCart
+    {
+        public ShoppingCart()
+        {
+
+        }
 
     }
 }

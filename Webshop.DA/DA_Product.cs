@@ -26,5 +26,9 @@ namespace Webshop.DA
 		{
 			return _dataSource.GetByName(productname);
 		}
+		public IEnumerable<Product> SortByPrice(string sortTerm)
+		{
+			return _dataSource.SortByPrice(sortTerm);
+		}
 	}
 }
