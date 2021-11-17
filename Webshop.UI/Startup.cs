@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Webshop.DA;
+using Webshop.DS;
 
 namespace Webshop.UI
 {
@@ -24,6 +26,9 @@ namespace Webshop.UI
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddRazorPages();
+			services.AddSingleton<DS_Product>();
+			services.AddSingleton<DA_Product>();
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

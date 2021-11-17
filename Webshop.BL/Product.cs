@@ -21,8 +21,9 @@ namespace Webshop.BL
 		public string ProductName { get; set; }
 		public string ProductDescription { get; set; }
 		public decimal? CurrentPrice { get; set; }
+		public string Image { get; set; }
 
-		
+
 	}
 
 }

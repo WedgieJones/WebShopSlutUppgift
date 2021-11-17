@@ -1,10 +1,36 @@
 ﻿@page
-@model IndexModel
+@model AllProductsModel
 @{
     ViewData["Title"] = "Home page";
 }
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" value="" name="searchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </span>
+        </div>
+    </div>
+   </form>
+<div class="card-deck">
+    @foreach (var products in Model.Products)
+    {
+        <div class="row">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            <div class="col">
+                <div class="card" style="max-width: 18rem; max-height: 45vh;">
+                    <img src="@products.Image" class="card-img-top" style="max-height:20vh" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@products.ProductName</h5>
+                        <p class="card-text">@products.ProductDescription </p>
+                        <h5 class="card-title">Pris: @products.CurrentPrice kr</h5>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+    }
 </div>
