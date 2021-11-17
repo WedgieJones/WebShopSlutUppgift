@@ -39,11 +39,7 @@ namespace Webshop.DS
         }
         public IEnumerable<Product> SortByPrice(string sortTerm)
         {
-            //if (string.IsNullOrEmpty(sortTerm))
-            //{
-            //    return GetByName(null);
-            //}
-            //else
+           
             if(sortTerm == "low")
             {
                 return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path)).OrderBy(p => p.CurrentPrice);

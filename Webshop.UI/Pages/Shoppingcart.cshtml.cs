@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Webshop.BL;
 
 namespace Webshop.UI.Pages
 {
@@ -13,6 +14,8 @@ namespace Webshop.UI.Pages
 		{
 
 		}
+
+        public IEnumerable<ShoppingCart> Shoppingcart { get; set; }
         public void OnGet()
         {
         }
