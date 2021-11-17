@@ -37,6 +37,24 @@ namespace Webshop.DS
         {
             throw new NotImplementedException();
         }
+        public IEnumerable<Product> SortByPrice(string sortTerm)
+        {
+            //if (string.IsNullOrEmpty(sortTerm))
+            //{
+            //    return GetByName(null);
+            //}
+            //else
+            if(sortTerm == "low")
+            {
+                return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path)).OrderBy(p => p.CurrentPrice);
+            }
+            else
+            {
+                return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path)).OrderByDescending(p => p.CurrentPrice);
+            }
+            
+        }
+
         public IEnumerable<Product> GetByName(string name)
         {
 
@@ -46,10 +64,9 @@ namespace Webshop.DS
             }
             else
             {
-                return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path)).Where(p => p.ProductName.Contains(name) || p.ProductName.StartsWith(name));
+                return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path)).Where(p => p.ProductName.Contains(name));
             }
 
-            //return LoadAll().SingleOrDefault(p => p.ProductName == productname || p.ProductName.StartsWith(productname));
         }
     }
 }

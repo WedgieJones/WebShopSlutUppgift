@@ -18,9 +18,16 @@ namespace Webshop.UI.Pages
 			_dataAccess = dataAccess;
 		}
         public IEnumerable<Product> Products { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public string SortTerm { get; set; }
         public void OnGet(string searchTerm)
         {
             Products = _dataAccess.GetByName(searchTerm);
+        }
+        public void OnPostSort(string sortTerm)
+        {
+            Products = _dataAccess.SortByPrice(sortTerm);
+
         }
     }
 }
