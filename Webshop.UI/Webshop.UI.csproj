@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Webshop.BL\Webshop.BL.csproj" />
+    <ProjectReference Include="..\Webshop.DA\Webshop.DA.csproj" />
+  </ItemGroup>
+
 </Project>

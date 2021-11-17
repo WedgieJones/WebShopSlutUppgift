@@ -11,7 +11,7 @@ namespace Webshop.DS
 {
     public class DS_Product : IDataSource<Product>
     {
-        string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Productjson.json";
+        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Productjson.json";
         public void Delete(Product _object)
         {
             throw new NotImplementedException();
@@ -19,6 +19,7 @@ namespace Webshop.DS
 
         public IEnumerable<Product> LoadAll()
         {
+
             return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path));
         }
 
@@ -35,6 +36,20 @@ namespace Webshop.DS
         public Product Update(Product item)
         {
             throw new NotImplementedException();
+        }
+        public IEnumerable<Product> GetByName(string name)
+        {
+
+            if (string.IsNullOrEmpty(name))
+            {
+                return LoadAll();
+            }
+            else
+            {
+                return JsonConvert.DeserializeObject<IEnumerable<Product>>(File.ReadAllText(path)).Where(p => p.ProductName.Contains(name) || p.ProductName.StartsWith(name));
+            }
+
+            //return LoadAll().SingleOrDefault(p => p.ProductName == productname || p.ProductName.StartsWith(productname));
         }
     }
 }
