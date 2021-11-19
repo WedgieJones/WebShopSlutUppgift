@@ -28,6 +28,9 @@ namespace Webshop.UI
 			services.AddRazorPages();
 			services.AddSingleton<DS_Product>();
 			services.AddSingleton<DA_Product>();
+			services.AddSingleton<DS_ShoppingCart>();
+			services.AddSingleton<DA_ShoppingCart>();
+
 
 		}
 

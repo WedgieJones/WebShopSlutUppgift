@@ -9,32 +9,24 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    class DS_Customer : IDataSource<Customer>
+    class DS_Customer 
     {
-        string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Customerjson.json";
-        public void Delete(Customer _object)
+        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Customerjson.json";
+        
+        public string LoadAll()
         {
-            throw new NotImplementedException();
+            var jsonResponse = File.ReadAllText(path);
+            return jsonResponse;
         }
-
-        public IEnumerable<Customer> LoadAll()
+        public IEnumerable<Customer> LoadAlls()
         {
-              return JsonConvert.DeserializeObject<IEnumerable<Customer>>(File.ReadAllText(path));
+            var jsonResponse = LoadAll();
+            return JsonConvert.DeserializeObject<IEnumerable<Customer>>(jsonResponse);
         }
 
         public Customer LoadById(int id)
         {
-            return LoadAll().SingleOrDefault(p => p.CustomerId == id);
-        }
-
-        public void Save(Customer _object)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Customer Update(Customer item)
-        {
-            throw new NotImplementedException();
+            return LoadAlls().SingleOrDefault(p => p.CustomerId == id);
         }
     }
 }

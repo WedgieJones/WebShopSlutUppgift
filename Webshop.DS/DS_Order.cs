@@ -9,32 +9,25 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    class DS_Order : IDataSource<Order>
+    class DS_Order
     {
         string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Orderjson.json";
-        public void Delete(Order _object)
+        public string LoadAll()
         {
-            throw new NotImplementedException();
+            var jsonReponse = File.ReadAllText(path);
+            return jsonReponse;
+
         }
 
-        public IEnumerable<Order> LoadAll()
-        {
-            return JsonConvert.DeserializeObject<IEnumerable<Order>>(File.ReadAllText(path));
+        public IEnumerable<Order> LoadAlls()
+        {   
+            var jsonResponse = LoadAll();
+            return JsonConvert.DeserializeObject<IEnumerable<Order>>(jsonResponse);
         }
 
         public Order LoadById(int id)
         {
-            return LoadAll().SingleOrDefault(p => p.OrderId == id);
-        }
-
-        public void Save(Order _object)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Order Update(Order item)
-        {
-            throw new NotImplementedException();
+            return LoadAlls().SingleOrDefault(p => p.OrderId == id);
         }
     }
 }
