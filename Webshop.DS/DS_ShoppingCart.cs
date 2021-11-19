@@ -9,32 +9,18 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    internal class DS_ShoppingCart : IDataSource<ShoppingCart>
+    public class DS_ShoppingCart 
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\ShoppingCartjson.json";
-        public void Delete(ShoppingCart _object)
+        
+        public string LoadAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<ShoppingCart> LoadAll()
-        {
-            return JsonConvert.DeserializeObject<IEnumerable<ShoppingCart>>(File.ReadAllText(path));
-        }
-
-        public ShoppingCart LoadById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Save(ShoppingCart _object)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ShoppingCart Update(ShoppingCart item)
-        {
-            throw new NotImplementedException();
+            var jsonResponse = File.ReadAllText(path);
+            return jsonResponse;
+        } 
+        public void Save(string contents)
+        {  
+            File.WriteAllText(path, contents);
         }
     }
 }

@@ -9,32 +9,23 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    class DS_CreditCard : IDataSource<CreditCard>
+    class DS_CreditCard 
     {
         string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
-        public void Delete(CreditCard _object)
+       
+        public string LoadAll()
         {
-            throw new NotImplementedException();
+            var jsonResponse = File.ReadAllText(path);
+            return jsonResponse;
         }
-
-        public IEnumerable<CreditCard> LoadAll()
-        {
-            return JsonConvert.DeserializeObject<IEnumerable<CreditCard>>(File.ReadAllText(path));
+        public IEnumerable<CreditCard> LoadAlls()
+        {   
+            var jsonResponse = LoadAll();
+            return JsonConvert.DeserializeObject<IEnumerable<CreditCard>>(jsonResponse);
         }
-
-        public CreditCard LoadById(int id)
+      public CreditCard LoadById(int id)
         {
-            return LoadAll().SingleOrDefault(p => p.CreditCardId == id);
-        }
-
-        public void Save(CreditCard _object)
-        {
-            throw new NotImplementedException();
-        }
-
-        public CreditCard Update(CreditCard item)
-        {
-            throw new NotImplementedException();
+            return LoadAlls().SingleOrDefault(p => p.CreditCardId == id);
         }
     }
 }

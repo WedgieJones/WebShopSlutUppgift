@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +18,36 @@ namespace Webshop.DA
 			_dataSource = dataSource;
 		}
 
-		public IEnumerable<Product> Products()
+		public IEnumerable<Product> LoadAll()
 		{
-			return _dataSource.LoadAll();
-			
+			return JsonConvert.DeserializeObject<IEnumerable<Product>>(_dataSource.LoadAll());
 		}
-		public IEnumerable<Product> GetByName(string productname)
+		public Product GetById(int id)
 		{
-			return _dataSource.GetByName(productname);
+			return LoadAll().SingleOrDefault(p => p.ProductId == id);
+		}
+		public IEnumerable<Product> GetByName(string searchTerm)
+		{
+			if (string.IsNullOrEmpty(searchTerm))
+			{
+				return LoadAll();
+			}
+			else
+			{
+				return LoadAll().Where(p => p.ProductName.Contains(searchTerm));
+			}
+
 		}
 		public IEnumerable<Product> SortByPrice(string sortTerm)
 		{
-			return _dataSource.SortByPrice(sortTerm);
+			if (sortTerm == "low")
+			{
+				return LoadAll().OrderBy(p => p.CurrentPrice);
+			}
+			else
+			{
+				return LoadAll().OrderByDescending(p => p.CurrentPrice);
+			}
 		}
 	}
 }

@@ -2,3 +2,25 @@
 @model Webshop.UI.Pages.ShoppingcartModel
 @{
 }
+<div class="card-deck">
+    @foreach (var products in Model.cartList)
+    {
+        <div class="row">
+
+            <div class="col">
+                <div class="card" style="max-width: 18rem; max-height: 45vh;">
+                    <img src="@products.Image" class="card-img-top" style="max-height:20vh" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@products.ProductName</h5>
+                        <p class="card-text">@products.ProductDescription </p>
+                        <h5 class="card-title">Pris: @products.CurrentPrice kr</h5>
+                        @*<a asp-page="/Index" asp-route-Id="@products.ProductId" class="btn btn-primary">Add to Cart</a>*@
+                        
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+    }
+</div>
