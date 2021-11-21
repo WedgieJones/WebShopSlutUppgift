@@ -18,9 +18,9 @@ namespace Webshop.DS
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         } 
-        public void Save(string contents)
+        public void Save(string serializedItems)
         {  
-            File.WriteAllText(path, contents);
+            File.WriteAllText(path, serializedItems);
         }
     }
 }

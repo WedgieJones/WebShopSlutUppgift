@@ -8,18 +8,15 @@ namespace Webshop.BL
 {
 	public class Order
 	{
-		public Order()
+		//public int OrderId { get; private set; }
+		//public DateTimeOffset? OrderDate { get; private set; }
+
+		public List<Product> products { get; set; }
+		public Customer Customer { get; set; }	
+		public void AddProduct(Product product)
 		{
-
-		}
-		public Order(int orderId)
-		{
-			OrderId = orderId;
+			products.Add(product);
 		}
 
-		public int OrderId { get; private set; }
-		public DateTimeOffset? OrderDate { get; private set; }
-
-		
 	}
 }

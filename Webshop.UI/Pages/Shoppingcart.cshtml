@@ -3,7 +3,7 @@
 @{
 }
 <div class="card-deck">
-    @foreach (var products in Model.cartList)
+    @foreach (var products in Model.CartList)
     {
         <div class="row">
 
@@ -14,8 +14,7 @@
                         <h5 class="card-title">@products.ProductName</h5>
                         <p class="card-text">@products.ProductDescription </p>
                         <h5 class="card-title">Pris: @products.CurrentPrice kr</h5>
-                        @*<a asp-page="/Index" asp-route-Id="@products.ProductId" class="btn btn-primary">Add to Cart</a>*@
-                        
+                     
                     </div>
                 </div>
                 <br>
@@ -23,4 +22,37 @@
             <br>
         </div>
     }
+  
+</div> 
+<div class="container-fluid">
+         <h3>Choose user to proceed with the order</h3>
+
+    @foreach (var customer in Model.CustomerList)
+    {
+<tbody>
+    <tr>
+      <td class="item">
+         <div class="">
+         <h5 class="card-title">@customer.FullName</h5>
+         <a asp-page="Order" asp-route-Id="@customer.CustomerId" class="btn btn-primary">Choose</a>
+      </td>
+   </tr>
+</tbody>
+}
+
 </div>
+@*<div class="container-fluid">
+         <h3>Choose user to proceed with the order</h3>
+   <form asp-for="/Order" asp-page-handler="User" asp-page="Order" asp-route-id="@Model.Customers.CustomerId">
+      
+          <select name="Getuser" id="User" onchange="this.form.submit()">
+          <option>Username</option>
+          <option value="@Model.Customers.CustomerId:1"> Lulu</option>
+          <option value="@Model.Customers.CustomerId:2"> Franciscus</option>
+          <option value="@Model.Customers.CustomerId:3"> Johannes</option>
+          <option value="@Model.Customers.CustomerId:4"> Jesost</option>
+          <option value="@Model.Customers.CustomerId:5"> Maria</option>
+          </select>
+      </a>
+   </form>
+</div>*@

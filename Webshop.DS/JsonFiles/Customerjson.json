@@ -1,30 +1,30 @@
 [
   {
-    "CustomerId": "1",
+    "CustomerId": 1,
     "Firstname": "Lulu",
     "Lastname": "Andersson",
     "EmailAddress": "lulu@vatikanet.it"
   },
   {
-    "CustomerId": "2",
+    "CustomerId": 2,
     "Firstname": "Franciscus",
     "Lastname": "Pavus",
     "EmailAddress": "francis@vatikanet.it"
   },
   {
-    "CustomerId": "3",
+    "CustomerId": 3,
     "Firstname": "Johannes",
     "Lastname": "Baptist",
     "EmailAddress": "bappe@vatikanet.it"
   },
   {
-    "CustomerId": "4",
+    "CustomerId": 4,
     "Firstname": "Jesost",
     "Lastname": "Kristost",
     "EmailAddress": "Osten@vatikanet.it"
   },
   {
-    "CustomerId": "5",
+    "CustomerId": 5,
     "Firstname": "Maria",
     "Lastname": "Magdalena",
     "EmailAddress": "mamma@vatikanet.it"

@@ -8,6 +8,12 @@ namespace Webshop.BL
 {
 	public class CreditCard
 	{
-        public int CreditCardId { get;private set; }
+        public readonly long CreditCardNum;
+
+        public CreditCard(long accNum)
+        {
+            CreditCardNum = accNum;
+        }
+
     }
 }

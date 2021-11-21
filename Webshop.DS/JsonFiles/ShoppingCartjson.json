@@ -1,1 +1,23 @@
-[{"ProductId":2,"ProductName":"Iceberg","ProductDescription":"Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max","CurrentPrice":200.0,"Image":"/Images/products/Iceberg.jpg"},{"ProductId":4,"ProductName":"Ramlosa","ProductDescription":"Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max","CurrentPrice":40.0,"Image":"/Images/products/ramlosat.jpg"},{"ProductId":2,"ProductName":"Iceberg","ProductDescription":"Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max","CurrentPrice":200.0,"Image":"/Images/products/Iceberg.jpg"}]
+[
+  {
+    "ProductId": 2,
+    "ProductName": "Iceberg",
+    "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+    "CurrentPrice": 200.0,
+    "Image": "/Images/products/Iceberg.jpg"
+  },
+  {
+    "ProductId": 3,
+    "ProductName": "Acqua Panna",
+    "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+    "CurrentPrice": 30.0,
+    "Image": "/Images/products/panna.jpg"
+  },
+  {
+    "ProductId": 5,
+    "ProductName": "San Pellegrino",
+    "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+    "CurrentPrice": 50.0,
+    "Image": "/Images/products/sanpellegrino.jpg"
+  }
+]

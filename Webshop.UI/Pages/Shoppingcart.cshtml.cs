@@ -11,40 +11,51 @@ namespace Webshop.UI.Pages
 {
     public class ShoppingcartModel : PageModel
     {
-        private readonly DA_Product products;
-        private readonly DA_ShoppingCart shoppingCart;
+        private readonly DA_Product _products;
+        private readonly DA_ShoppingCart _shoppingCart;
+        private readonly DA_Customer _customer;
 
-        public ShoppingcartModel(DA_Product _Products, DA_ShoppingCart _ShoppingCart)
+        public ShoppingcartModel(DA_Product Products, DA_ShoppingCart ShoppingCart, DA_Customer Customer)
 		{
-            cartList = new List<Product>();
-            products = _Products;
-            shoppingCart = _ShoppingCart;
+            CartList = new List<Product>();
+            _products = Products;
+            _shoppingCart = ShoppingCart;
+            _customer = Customer;
         }
-
-        //Save method måste generea en lista från json sen lägga till ny product
-
-        public List<Product> cartList { get; set; }
+        public List<Product> CartList { get; set; }
+        public IEnumerable<Customer> CustomerList { get; set; }
+        public Customer Customers { get; set; }
         public void OnGet(int id)
         {
-            var items = shoppingCart.LoadAll().ToList();
+            CustomerList = _customer.LoadAll();
+
+            var items = _shoppingCart.LoadAll().ToList();
+
 
             if (items.Count != 0)
             { 
-                cartList.AddRange(items);
+                CartList.AddRange(items);
             }
 
             if (id != 0)
             {
-                var cartItem = products.GetById(id);
-                cartList.Add(cartItem);
-                shoppingCart.Save(cartItem);
+                var cartItem = _products.GetById(id);
+                CartList.Add(cartItem);
+                _shoppingCart.Save(cartItem);
             }
-
-            //samtidigt spara i json
-            //=> dataAcceess = Get product by ID
-            //add to list.
         }
-
-
+       
+        //public IActionResult OnPost()
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        // do something
+        //        return RedirectToPage("Contact");
+        //    }
+        //    else
+        //    {
+        //        return Page();
+        //    }
+        //}
     }
 }

@@ -9,24 +9,14 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    class DS_Customer 
+    public class DS_Customer 
     {
-        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Customerjson.json";
         
         public string LoadAll()
         {
+            string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Customerjson.json";
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
-        }
-        public IEnumerable<Customer> LoadAlls()
-        {
-            var jsonResponse = LoadAll();
-            return JsonConvert.DeserializeObject<IEnumerable<Customer>>(jsonResponse);
-        }
-
-        public Customer LoadById(int id)
-        {
-            return LoadAlls().SingleOrDefault(p => p.CustomerId == id);
         }
     }
 }

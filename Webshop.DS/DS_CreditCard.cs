@@ -23,9 +23,9 @@ namespace Webshop.DS
             var jsonResponse = LoadAll();
             return JsonConvert.DeserializeObject<IEnumerable<CreditCard>>(jsonResponse);
         }
-      public CreditCard LoadById(int id)
-        {
-            return LoadAlls().SingleOrDefault(p => p.CreditCardId == id);
-        }
+      //public CreditCard LoadById(int id)
+      //  {
+      //      return LoadAlls().SingleOrDefault(p => p.CreditCardId == id);
+      //  }
     }
 }

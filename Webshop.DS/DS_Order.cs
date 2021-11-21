@@ -25,9 +25,9 @@ namespace Webshop.DS
             return JsonConvert.DeserializeObject<IEnumerable<Order>>(jsonResponse);
         }
 
-        public Order LoadById(int id)
-        {
-            return LoadAlls().SingleOrDefault(p => p.OrderId == id);
-        }
+        //public Order LoadById(int id)
+        //{
+        //    return LoadAll().SingleOrDefault(p => p. == id);
+        //}
     }
 }
