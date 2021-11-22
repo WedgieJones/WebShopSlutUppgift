@@ -30,7 +30,14 @@ namespace Webshop.UI
 			services.AddSingleton<DA_Product>();
 			services.AddSingleton<DS_ShoppingCart>();
 			services.AddSingleton<DA_ShoppingCart>();
-
+			services.AddSingleton<DS_Customer>();
+			services.AddSingleton<DA_Customer>();
+			services.AddSingleton<DA_Order>();
+			services.AddSingleton<DS_Order>();
+			services.AddSingleton<DS_Receipt>();
+			services.AddSingleton<DA_Receipt>();
+			services.AddSingleton<DS_CreditCard>();
+			services.AddSingleton<DA_CreditCard>();
 
 		}
 

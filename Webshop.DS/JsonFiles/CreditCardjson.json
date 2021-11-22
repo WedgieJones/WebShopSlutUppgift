@@ -1,3 +1,22 @@
-{
-
-}
+[
+  {
+    "CustomerId": 1,
+    "CreditCardNum": "5544 5588 6677"
+  },
+  {
+    "CustomerId": 2,
+    "CreditCardNum": "5544 8866 6678"
+  },
+  {
+    "CustomerId": 3,
+    "CreditCardNum": "5544 1234 9587"
+  },
+  {
+    "CustomerId": 4,
+    "CreditCardNum": "5544 8457 1111"
+  },
+  {
+    "CustomerId": 5,
+    "CreditCardNum": "5544 6179 6677"
+  }
+]

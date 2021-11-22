@@ -24,16 +24,17 @@ namespace Webshop.DA
         }
         public void Save(Product cartItem)
         {
-            var items = LoadAll().ToList();
+            var items = LoadAll()?.ToList() ?? new List<Product>();
             items.Add(cartItem);
             var serializedItems = JsonConvert.SerializeObject(items);
             _shoppingcart.Save(serializedItems);
         }
         public Product Update( )
         {
+
             throw new NotImplementedException();
         }
-
+        public void Delete() { _shoppingcart.Delete(); }
 
 
     }

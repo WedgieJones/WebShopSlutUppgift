@@ -12,7 +12,6 @@ namespace Webshop.DA
 	public class DA_Product
 	{
 		private readonly DS_Product _dataSource;
-
 		public DA_Product(DS_Product dataSource)
 		{
 			_dataSource = dataSource;
@@ -36,7 +35,6 @@ namespace Webshop.DA
 			{
 				return LoadAll().Where(p => p.ProductName.Contains(searchTerm));
 			}
-
 		}
 		public IEnumerable<Product> SortByPrice(string sortTerm)
 		{

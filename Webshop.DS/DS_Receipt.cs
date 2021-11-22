@@ -11,7 +11,7 @@ namespace Webshop.DS
 {
     public class DS_Receipt 
     {
-        string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Receiptsjson.json";
+        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Receiptsjson.json";
         
         public string LoadAll()
         {   
@@ -19,15 +19,10 @@ namespace Webshop.DS
             return jsonResponse;
         }
 
-        public IEnumerable<Receipts> LoadAlls()
+        
+        public void Save(string serializedItems)
         {
-            var jsonResponse = LoadAll();
-            return JsonConvert.DeserializeObject<IEnumerable<Receipts>>(jsonResponse);
-        }
-
-        public Receipts LoadById(int id)
-        {
-            return LoadAlls().SingleOrDefault(p => p.ReceiptId == id);
+            File.WriteAllText(path, serializedItems);
         }
     }
 }

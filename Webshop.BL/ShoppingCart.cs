@@ -9,10 +9,11 @@ namespace Webshop.BL
     public class ShoppingCart
     {
         public List<Product> products { get; set; }
-        public void AddProduct(Product product)
-        {
-            products.Add(product);
-        }
+       
+        //public void AddProduct(Product product)
+        //{
+        //    products.Add(product);
+        //}
     }
 }
 

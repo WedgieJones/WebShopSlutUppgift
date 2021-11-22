@@ -1,3 +1,31 @@
-{
-
-}
+[
+  {
+    "ReceiptId": "9cd21be4-c08a-42b7-9f07-b092bce9b8d3",
+    "Order": {
+      "OrderId": "b8acd34c-13e1-4921-a22b-3a7b6a943f8b",
+      "CustomerId": 4,
+      "Products": [
+        {
+          "ProductId": 1,
+          "ProductName": "Evian",
+          "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+          "CurrentPrice": 10.0,
+          "Image": "/Images/products/Eviant.jpg"
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Iceberg",
+          "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+          "CurrentPrice": 200.0,
+          "Image": "/Images/products/Iceberg.jpg"
+        }
+      ],
+      "IsPaid": true
+    },
+    "DateTime": "2021-11-22T21:49:22.691752+01:00",
+    "CreditCard": {
+      "CreditCardNum": "5544 8457 1111",
+      "CustomerId": 4
+    }
+  }
+]
