@@ -9,9 +9,9 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    class DS_Order
+    public class DS_Order
     {
-        string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Orderjson.json";
+        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Orderjson.json";
         public string LoadAll()
         {
             var jsonReponse = File.ReadAllText(path);
@@ -23,6 +23,10 @@ namespace Webshop.DS
         {   
             var jsonResponse = LoadAll();
             return JsonConvert.DeserializeObject<IEnumerable<Order>>(jsonResponse);
+        }
+        public void Save(string serializedOrder)
+        {
+            File.WriteAllText(path, serializedOrder);
         }
 
         //public Order LoadById(int id)

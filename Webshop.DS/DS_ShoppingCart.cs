@@ -22,5 +22,9 @@ namespace Webshop.DS
         {  
             File.WriteAllText(path, serializedItems);
         }
+        public void Delete()
+        {
+            File.Delete(path);
+        }
     }
 }

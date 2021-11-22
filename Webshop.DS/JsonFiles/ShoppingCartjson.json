@@ -12,12 +12,6 @@
     "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
     "CurrentPrice": 30.0,
     "Image": "/Images/products/panna.jpg"
-  },
-  {
-    "ProductId": 5,
-    "ProductName": "San Pellegrino",
-    "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
-    "CurrentPrice": 50.0,
-    "Image": "/Images/products/sanpellegrino.jpg"
   }
+  
 ]

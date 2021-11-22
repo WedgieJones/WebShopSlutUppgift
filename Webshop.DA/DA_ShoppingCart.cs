@@ -34,7 +34,7 @@ namespace Webshop.DA
 
             throw new NotImplementedException();
         }
-
+        public void Delete() { _shoppingcart.Delete(); }
 
 
     }

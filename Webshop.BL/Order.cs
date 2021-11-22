@@ -8,15 +8,15 @@ namespace Webshop.BL
 {
 	public class Order
 	{
-		//public int OrderId { get; private set; }
-		//public DateTimeOffset? OrderDate { get; private set; }
+        //public int OrderId { get; private set; }
+        //public DateTimeOffset? OrderDate { get; private set; }
+        //public Customer Customer { get; set; }
+        public Guid OrderId { get; set; }
+        public int CustomerId { get; set; }
+		public List<Product> Products { get; set; }
+        public bool IsPaid { get; set; }
 
-		public List<Product> products { get; set; }
-		public Customer Customer { get; set; }	
-		public void AddProduct(Product product)
-		{
-			products.Add(product);
-		}
+        //En order måste innehålla en property IsPaid som kan togglas när kunden har betalat.
 
-	}
+    }
 }

@@ -1,10 +1,12 @@
 ﻿@page
-@model Webshop.UI.Pages.OrderModel
+@model Webshop.UI.Pages.ReceiptModel
 @{
 }
-<h2>Hej @Model.customer.FirstName, här är din order!</h2>
-
-<div>
+<h2>
+    SHOPPING FUN
+</h2>
+<H3></H3>
+@*<div>
     @foreach (var products in Model.orderList)
     {
 <tbody>
@@ -18,10 +20,4 @@
 </tbody>
 }
 <h4>Total amount is @Model.totalSum.Sum() kr</h4>
-</div> 
-<div>
-    <form>
-                        <a asp-page="Receipt" asp-route-id="@Model.order.OrderId" class="btn btn-primary">PAY</a>
-
-    </form>
-</div>
+</div> *@

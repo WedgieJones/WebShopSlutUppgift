@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    class DS_CreditCard 
+    public class DS_CreditCard 
     {
         string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
        

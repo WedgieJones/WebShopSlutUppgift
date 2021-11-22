@@ -45,17 +45,5 @@ namespace Webshop.UI.Pages
             }
         }
        
-        //public IActionResult OnPost()
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        // do something
-        //        return RedirectToPage("Contact");
-        //    }
-        //    else
-        //    {
-        //        return Page();
-        //    }
-        //}
     }
 }
