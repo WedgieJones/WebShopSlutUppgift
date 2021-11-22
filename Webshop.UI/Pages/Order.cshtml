@@ -2,26 +2,25 @@
 @model Webshop.UI.Pages.OrderModel
 @{
 }
-<h2>Hej @Model.customer.FirstName, här är din order!</h2>
+<h2>Hej @Model.Customer.FirstName, här är din order!</h2>
 
 <div>
-    @foreach (var products in Model.orderList)
+    @foreach (var products in Model.OrderList)
     {
 <tbody>
     <tr>
       <td class="item">
          <div class="">
          <h3 class="card-title">@products.ProductName | Pris: @products.CurrentPrice kr</h3>
-         @{Model.totalSum.Add(@products.CurrentPrice);}
       </td>
    </tr>
 </tbody>
 }
-<h4>Total amount is @Model.totalSum.Sum() kr</h4>
+<h4>Total amount is @Model.TotalSum kr</h4>
 </div> 
 <div>
     <form>
-                        <a asp-page="Receipt" asp-route-id="@Model.order.OrderId" class="btn btn-primary">PAY</a>
+       <a asp-page="Receipt" asp-route-orderid="@Model.Order.OrderId" class="btn btn-primary">PAY</a>
 
     </form>
 </div>

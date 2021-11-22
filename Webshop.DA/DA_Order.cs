@@ -34,28 +34,12 @@ namespace Webshop.DA
         { 
             _shoppingCart.Delete(); 
         }
-        //public void Save(Order order)
-        //{
-        //    var serilizedOrder = JsonConvert.SerializeObject(order);
-        //    _order.Save(serilizedOrder);
-
-        //}
-        public IEnumerable<Order> GetById(Guid Orderid)
+        
+        public Order GetById(Guid Orderid)
         {
-            return (IEnumerable<Order>)LoadAll().SingleOrDefault(p => p.OrderId.Equals(Orderid));
-            //return LoadAll().Where(Guid.ToString().Equals(Orderid));
+            return LoadAll().SingleOrDefault(p => p.OrderId.Equals(Orderid));
         }
 
-        //public Dictionary()
-        //{
-        //    if (OrderDictionary.ContainsKey(customer))
-        //    {
-        //        return OrderDictionary[customer];
-        //    }
-        //    else
-        //    {
-        //        return null;
-        //    }
-        //}
+        
     }
 }

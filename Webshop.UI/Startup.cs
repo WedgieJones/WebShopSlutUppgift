@@ -37,7 +37,7 @@ namespace Webshop.UI
 			services.AddSingleton<DS_Receipt>();
 			services.AddSingleton<DA_Receipt>();
 			services.AddSingleton<DS_CreditCard>();
-
+			services.AddSingleton<DA_CreditCard>();
 
 		}
 

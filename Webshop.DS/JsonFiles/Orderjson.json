@@ -1,3 +1,51 @@
 [
-
+  {
+    "OrderId": "b8acd34c-13e1-4921-a22b-3a7b6a943f8b",
+    "CustomerId": 4,
+    "Products": [
+      {
+        "ProductId": 1,
+        "ProductName": "Evian",
+        "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+        "CurrentPrice": 10.0,
+        "Image": "/Images/products/Eviant.jpg"
+      },
+      {
+        "ProductId": 2,
+        "ProductName": "Iceberg",
+        "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+        "CurrentPrice": 200.0,
+        "Image": "/Images/products/Iceberg.jpg"
+      }
+    ],
+    "IsPaid": false
+  },
+  {
+    "OrderId": "ba267588-72d2-49f2-9d76-0684b66c49ad",
+    "CustomerId": 1,
+    "Products": [
+      {
+        "ProductId": 2,
+        "ProductName": "Iceberg",
+        "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+        "CurrentPrice": 200.0,
+        "Image": "/Images/products/Iceberg.jpg"
+      }
+    ],
+    "IsPaid": false
+  },
+  {
+    "OrderId": "a5cc06a2-8821-49f4-b04b-a9eeb46f87e4",
+    "CustomerId": 5,
+    "Products": [
+      {
+        "ProductId": 4,
+        "ProductName": "Ramlosa",
+        "ProductDescription": "Vatten som kommer fr�n en k�lla i fj�llen. Det smakar gott och �r rent. Det h�r �r max",
+        "CurrentPrice": 40.0,
+        "Image": "/Images/products/ramlosat.jpg"
+      }
+    ],
+    "IsPaid": false
+  }
 ]

@@ -29,7 +29,7 @@ namespace Webshop.DA
             _Receipt.Save(serializedItems);
         }
 
-        public Receipt LoadById(int id)
+        public Receipt LoadById(Guid id)
         {
             return LoadAll().SingleOrDefault(p => p.ReceiptId == id);
         }

@@ -29,10 +29,9 @@ namespace Webshop.UI.Pages
         {
             CustomerList = _customer.LoadAll();
 
-            var items = _shoppingCart.LoadAll().ToList();
+            var items = _shoppingCart.LoadAll();
 
-
-            if (items.Count != 0)
+            if (items != null && items.Any())
             { 
                 CartList.AddRange(items);
             }

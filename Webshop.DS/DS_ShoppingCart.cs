@@ -24,7 +24,7 @@ namespace Webshop.DS
         }
         public void Delete()
         {
-            File.Delete(path);
+            File.WriteAllText(path, "[]");
         }
     }
 }

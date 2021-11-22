@@ -16,37 +16,38 @@ namespace Webshop.UI.Pages
 
         public OrderModel(DA_ShoppingCart cartAccess, DA_Customer da_customer, DA_Order da_order)
         {
-            order = new Order();
-            totalSum = new List<decimal?>();
-            customer = new Customer();
-            customerList = new List<Customer>();
-            orderList = new List<Product>();
+            //order = new Order();
+            //totalSum = new List<decimal?>();
+            //customer = new Customer();
+            //customerList = new List<Customer>();
+            //orderList = new List<Product>();
             _cartAccess = cartAccess;
             _customer = da_customer;
             _order = da_order;
         }
-
-        public List<Product> orderList { get; set; }
-        public List<Customer> customerList { get; set; }
-        public Customer customer { get; set; }
-        public List<decimal?> totalSum { get; set; }
-        public Order order { get; set; }
-
+        
+        public List<Product> OrderList { get; set; } = new List<Product>();
+        public List<Customer> CustomerList { get; set; } = new List<Customer>();
+        public Customer Customer { get; set; } = new Customer();
+        public decimal TotalSum { get; set; }
+        public Order Order { get; set; } = new Order();
+        
         public void OnGet(int customerId)
         {
             var items = _cartAccess.LoadAll().ToList();
-            orderList.AddRange(items);
+            OrderList.AddRange(items);
            
-            order.CustomerId = customerId;
-            order.OrderId = Guid.NewGuid();
-            order.Products = orderList;
-            order.IsPaid = false;
-            _order.Save(order);
-            var guidOrder = order.OrderId.ToString();
+            Order.CustomerId = customerId;
+            Order.OrderId = Guid.NewGuid();
+            Order.Products = OrderList;
+            Order.IsPaid = false;
+            _order.Save(Order);
+            _cartAccess.Delete();
+            TotalSum = OrderList.Sum(p => p.CurrentPrice);
 
             if (customerId != 0)
             {
-                customer = _customer.LoadById(customerId);
+                Customer = _customer.LoadById(customerId);
             }
 
         }

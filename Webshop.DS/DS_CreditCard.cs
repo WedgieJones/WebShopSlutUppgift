@@ -11,21 +11,14 @@ namespace Webshop.DS
 {
     public class DS_CreditCard 
     {
-        string path = @"C:\Users\Fredrik\Source\Repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
+        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
        
         public string LoadAll()
         {
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         }
-        public IEnumerable<CreditCard> LoadAlls()
-        {   
-            var jsonResponse = LoadAll();
-            return JsonConvert.DeserializeObject<IEnumerable<CreditCard>>(jsonResponse);
-        }
-      //public CreditCard LoadById(int id)
-      //  {
-      //      return LoadAlls().SingleOrDefault(p => p.CreditCardId == id);
-      //  }
+
+        
     }
 }

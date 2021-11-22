@@ -9,9 +9,11 @@ namespace Webshop.BL
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string EmailAddress { get; set; }
-		public CreditCard CreditCard { get; set; }
 		public string FullName => FirstName + " " + LastName;
+
+
 		//public List<Guid> orderList 
+		//public CreditCard CreditCard { get; set; }
 
     }
 }
