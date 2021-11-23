@@ -40,6 +40,14 @@ namespace Webshop.DA
             return LoadAll().SingleOrDefault(p => p.OrderId.Equals(Orderid));
         }
 
-        
-    }
+		public void UpdateOrder(Guid orderId, bool isPaid)
+		{
+			var jsonList = LoadAll();
+			var order = jsonList.Single(p => p.OrderId.Equals(orderId));
+            order.IsPaid = isPaid;
+            var serializedItems = JsonConvert.SerializeObject(jsonList);
+            _order.Save(serializedItems);
+        }
+
+	}
 }

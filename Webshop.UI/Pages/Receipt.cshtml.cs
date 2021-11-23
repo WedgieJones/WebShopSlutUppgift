@@ -45,6 +45,7 @@ namespace Webshop.UI.Pages
             Receipt.ReceiptId = Guid.NewGuid();
             PaidOrder.IsPaid = true;
             TotalSum = PaidOrder.Products.Sum(p => p.CurrentPrice);
+            _Order.UpdateOrder(OrderId, PaidOrder.IsPaid);
             _Receipt.Save(Receipt);
         }
     }

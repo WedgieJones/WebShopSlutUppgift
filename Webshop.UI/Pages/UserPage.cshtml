@@ -1,0 +1,29 @@
+﻿@page
+@model Webshop.UI.Pages.UserPageModel
+@{
+}
+<h2>UserInfo</h2>
+<h4>   FullName     </h4>
+<table>
+    <div class="container-fluid">
+         <h3>Choose your name to see orders and receipts</h3>
+
+    @foreach (var customer in Model.CustomerList)
+    {
+<tbody>
+    <tr>
+      <td class="item">
+         <div class="">
+         <p class="card-title">@customer.FullName</p>
+         <a asp-page="" asp-route-customerId="@customer.CustomerId" class="btn btn-primary">This is my name</a>
+      </td>
+   </tr>
+</tbody>
+}
+
+</div>
+</table>
+<table>
+
+
+</table>

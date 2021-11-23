@@ -47,4 +47,20 @@
         </div>
     }
 </div>
+<div class="container-fluid">
+         <h3>Choose user to log into userpage</h3>
+
+    @foreach (var customer in Model.Customers)
+    {
+<tbody>
+    <tr>
+      <td class="item">
+         <div class="">
+         <h5 class="card-title">@customer.FullName</h5>
+         <a asp-page="UserPage" asp-route-customerId="@customer.CustomerId" class="btn btn-primary">Choose</a>
+      </td>
+   </tr>
+</tbody>
+}
+
 </div>

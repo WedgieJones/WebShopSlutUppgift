@@ -16,11 +16,7 @@ namespace Webshop.UI.Pages
 
         public OrderModel(DA_ShoppingCart cartAccess, DA_Customer da_customer, DA_Order da_order)
         {
-            //order = new Order();
-            //totalSum = new List<decimal?>();
-            //customer = new Customer();
-            //customerList = new List<Customer>();
-            //orderList = new List<Product>();
+           
             _cartAccess = cartAccess;
             _customer = da_customer;
             _order = da_order;
