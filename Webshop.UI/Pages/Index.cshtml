@@ -50,17 +50,13 @@
 <div class="container-fluid">
          <h3>Choose user to log into userpage</h3>
 
-    @foreach (var customer in Model.Customers)
-    {
-<tbody>
-    <tr>
-      <td class="item">
-         <div class="">
-         <h5 class="card-title">@customer.FullName</h5>
-         <a asp-page="UserPage" asp-route-CustomerId="@customer.CustomerId" class="btn btn-primary">Choose</a>
-      </td>
-   </tr>
-</tbody>
-}
-
 </div>
+<table>
+     @foreach (var customer in Model.Customers)
+            {
+                <div class="list-group">
+        <a asp-page="UserPage" asp-route-customerId="@customer.CustomerId" class="list-group-item list-group-item-action active">Choose your name: @customer.FullName </a>
+       
+</div>
+            }
+</table>

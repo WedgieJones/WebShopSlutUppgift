@@ -12,18 +12,15 @@ namespace Webshop.DS
     public class DS_Order : IDataSource<Order>
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Orderjson.json";
+        //LoadAll reads the jsonfile and returns a string containing all the text in the file, and then closes the file.
+
         public string LoadAll()
         {
             var jsonReponse = File.ReadAllText(path);
             return jsonReponse;
 
         }
-
-        public IEnumerable<Order> LoadAlls()
-        {   
-            var jsonResponse = LoadAll();
-            return JsonConvert.DeserializeObject<IEnumerable<Order>>(jsonResponse);
-        }
+        //Save writes all text in the given variable to the jsonfile, overwriting everything on it.
         public void Save(string serializedOrder)
         {
             File.WriteAllText(path, serializedOrder);

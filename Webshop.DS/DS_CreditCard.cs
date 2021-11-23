@@ -11,13 +11,14 @@ namespace Webshop.DS
 {
     public class DS_CreditCard : IDataSource<CreditCard>
     {
-        string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
-       
+        //LoadAll reads the jsonfile and returns a string containing all the text in the file, and then closes the file.
         public string LoadAll()
         {
+            string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         }
+        //Not in use
 		public void Save(string serilizedItem)
 		{
 			throw new NotImplementedException();
