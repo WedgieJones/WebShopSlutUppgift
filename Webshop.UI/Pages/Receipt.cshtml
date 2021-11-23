@@ -3,21 +3,31 @@
 @{
 }
 <h2>
-    SHOPPING FUN
+    SHOPPING FUN - RECEIPT
 </h2>
-<H3></H3>
-@*<div>
-    @foreach (var products in Model.orderList)
+<div>
+    <h3>Date: @Model.Receipt.DateTime </h3>
+    <p>CreditCard: @Model.Receipt.CreditCard.CreditCardNum</p>
+    <p>Customer: @Model.Customer.FullName </p>
+</div>
+<h3>List of items:</h3>
+<div>
+    @foreach (var product in Model.Receipt.Order.Products)
     {
 <tbody>
     <tr>
       <td class="item">
          <div class="">
-         <h3 class="card-title">@products.ProductName | Pris: @products.CurrentPrice kr</h3>
-         @{Model.totalSum.Add(@products.CurrentPrice);}
+         <h3 class="card-title">@product.ProductName | Pris: @product.CurrentPrice kr</h3>
       </td>
    </tr>
 </tbody>
 }
-<h4>Total amount is @Model.totalSum.Sum() kr</h4>
-</div> *@
+<h4>Total amount is @Model.TotalSum kr</h4>
+</div> 
+<div>
+    <form>
+       <a asp-page="Receipt" asp-route-orderid="@Model.TotalSum" class="btn btn-primary">PAY</a>
+
+    </form>
+</div>

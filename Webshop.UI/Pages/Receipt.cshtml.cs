@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Webshop.BL;
 using Webshop.DA;
 
@@ -22,17 +24,19 @@ namespace Webshop.UI.Pages
         }
         public Order PaidOrder { get; set; }
         public Receipt Receipt { get; set; }
-        public Customer Customer { get; set; }
-        public CreditCard CreditCard { get; set; }  
+        public Customer Customer { get; set; } = new Customer();
+        public CreditCard CreditCard { get; set; }
+		public decimal TotalSum { get; set; }
 
 
-        public void OnGet(Guid OrderId)
+		public void OnGet(Guid OrderId)
         {
             if (OrderId != Guid.Empty)
             {
                 PaidOrder = _Order.GetById(OrderId);
             }
             var customer = _Customer.LoadById(PaidOrder.CustomerId.Value);
+            Customer = customer;
             var custCreditCard = _CreditCard.LoadById(customer.CustomerId);
             Receipt = new Receipt(); 
             Receipt.DateTime = DateTimeOffset.Now;
@@ -40,7 +44,7 @@ namespace Webshop.UI.Pages
             Receipt.CreditCard = custCreditCard;
             Receipt.ReceiptId = Guid.NewGuid();
             PaidOrder.IsPaid = true;
-
+            TotalSum = PaidOrder.Products.Sum(p => p.CurrentPrice);
             _Receipt.Save(Receipt);
         }
     }
