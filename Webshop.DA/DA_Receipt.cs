@@ -33,5 +33,10 @@ namespace Webshop.DA
         {
             return LoadAll().SingleOrDefault(p => p.ReceiptId == id);
         }
+        public List<Receipt> LoadByCustomerId(int CustomerId)
+		{
+            var Receipts = LoadAll().Where(p => p.Order.CustomerId == CustomerId);
+            return Receipts.ToList();
+		}
     }
 }

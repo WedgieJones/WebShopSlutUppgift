@@ -23,7 +23,7 @@ namespace Webshop.UI.Pages
             _CreditCard = da_CreditCard;
         }
         public Order PaidOrder { get; set; }
-        public Receipt Receipt { get; set; }
+        public Receipt Receipt { get; set; } = new Receipt();
         public Customer Customer { get; set; } = new Customer();
         public CreditCard CreditCard { get; set; }
 		public decimal TotalSum { get; set; }
@@ -38,7 +38,7 @@ namespace Webshop.UI.Pages
             var customer = _Customer.LoadById(PaidOrder.CustomerId.Value);
             Customer = customer;
             var custCreditCard = _CreditCard.LoadById(customer.CustomerId);
-            Receipt = new Receipt(); 
+            //Receipt = new Receipt(); 
             Receipt.DateTime = DateTimeOffset.Now;
             Receipt.Order = PaidOrder;
             Receipt.CreditCard = custCreditCard;

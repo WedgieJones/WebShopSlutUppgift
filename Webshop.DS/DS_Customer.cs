@@ -18,5 +18,10 @@ namespace Webshop.DS
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         }
-    }
+
+		public void Save(Customer _object)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

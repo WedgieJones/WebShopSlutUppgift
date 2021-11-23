@@ -37,10 +37,25 @@ namespace Webshop.DA
         
         public Order GetById(Guid Orderid)
         {
-            return LoadAll().SingleOrDefault(p => p.OrderId.Equals(Orderid));
+            return LoadAll().SingleOrDefault(p => p.OrderId == Orderid);
+        }
+        public List<Order> GetByCustomerId(int CustomerId)
+        {
+            return LoadAll().Where(p => p.CustomerId == CustomerId).ToList();
+        }
+        public List<Order> GetByisPaid()
+		{
+            var orders = LoadAll().Where(p => p.IsPaid == false).ToList();
+            return orders;
+        }
+       
+        public List<Order> GetByCustomerIsPaid(int CustomerId)
+        {
+            var orders = GetByisPaid().FindAll(p => p.CustomerId == CustomerId);
+            return orders;
         }
 
-		public void UpdateOrder(Guid orderId, bool isPaid)
+        public void UpdateOrder(Guid orderId, bool isPaid)
 		{
 			var jsonList = LoadAll();
 			var order = jsonList.Single(p => p.OrderId.Equals(orderId));

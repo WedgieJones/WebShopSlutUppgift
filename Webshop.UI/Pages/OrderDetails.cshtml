@@ -1,0 +1,25 @@
+﻿@page
+@model Webshop.UI.Pages.OrderDetailsModel
+@{
+}
+<h2>Orderdetails for Order: @Model.Order.OrderId</h2>
+<div>
+    <h5></h5>
+   
+    <h5>Products:</h5>
+   @foreach(var product in @Model.Order.Products)
+    {
+<div class="list-group">
+        <a >Product:@product.ProductName. Price: @product.CurrentPrice </a>
+       
+</div>
+        
+    }
+    <h5>Total sum : @Model.TotalSum</h5>
+    <div>
+    <form>
+       <a asp-page="Receipt" asp-route-orderid="@Model.Order.OrderId" class="btn btn-primary">PAY</a>
+
+    </form>
+</div>
+</div>

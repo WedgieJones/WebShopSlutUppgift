@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    public class DS_CreditCard 
+    public class DS_CreditCard : IDataSource<CreditCard>
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\CreditCardjson.json";
        
@@ -18,7 +18,10 @@ namespace Webshop.DS
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         }
+		public void Save(string serilizedItem)
+		{
+			throw new NotImplementedException();
+		}
 
-        
-    }
+	}
 }

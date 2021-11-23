@@ -1,0 +1,19 @@
+﻿@page
+@model Webshop.UI.Pages.ReceiptDetailsModel
+@{
+}
+<h2>Receiptdetails for receipt: @Model.Receipt.ReceiptId</h2>
+<div>
+    <h5></h5>
+    <h5>Paid with Creditcard: @Model.Receipt.CreditCard.CreditCardNum</h5>
+    <h5>Date: @Model.Receipt.DateTime</h5>
+    <h5>Products:</h5>
+   @foreach(var product in @Model.Receipt.Order.Products)
+    {
+<div class="list-group">
+        <a >Product:@product.ProductName. Price: @product.CurrentPrice </a>
+       
+</div>
+        
+    }
+</div>

@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    public class DS_Order
+    public class DS_Order : IDataSource<Order>
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Orderjson.json";
         public string LoadAll()
@@ -29,9 +29,5 @@ namespace Webshop.DS
             File.WriteAllText(path, serializedOrder);
         }
 
-        //public Order LoadById(int id)
-        //{
-        //    return LoadAll().SingleOrDefault(p => p. == id);
-        //}
     }
 }

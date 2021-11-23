@@ -22,8 +22,7 @@ namespace Webshop.UI.Pages
             _order = da_order;
         }
         
-        public List<Product> OrderList { get; set; } = new List<Product>();
-        public List<Customer> CustomerList { get; set; } = new List<Customer>();
+        public List<Product> Products { get; set; } = new List<Product>();
         public Customer Customer { get; set; } = new Customer();
         public decimal TotalSum { get; set; }
         public Order Order { get; set; } = new Order();
@@ -31,15 +30,17 @@ namespace Webshop.UI.Pages
         public void OnGet(int customerId)
         {
             var items = _cartAccess.LoadAll().ToList();
-            OrderList.AddRange(items);
+            Products.AddRange(items);
            
             Order.CustomerId = customerId;
             Order.OrderId = Guid.NewGuid();
-            Order.Products = OrderList;
+            Order.Products = Products;
             Order.IsPaid = false;
             _order.Save(Order);
+           
             _cartAccess.Delete();
-            TotalSum = OrderList.Sum(p => p.CurrentPrice);
+            
+            TotalSum = Products.Sum(p => p.CurrentPrice);
 
             if (customerId != 0)
             {
