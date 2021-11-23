@@ -9,7 +9,7 @@ using Webshop.DS;
 
 namespace Webshop.DA
 {
-	public class DA_Product
+	public class DA_Product : IDataAccess<Product>
 	{
 		private readonly DS_Product _dataSource;
 		public DA_Product(DS_Product dataSource)

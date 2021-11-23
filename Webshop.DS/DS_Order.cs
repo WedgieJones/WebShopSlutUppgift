@@ -19,11 +19,6 @@ namespace Webshop.DS
 
         }
 
-        public IEnumerable<Order> LoadAlls()
-        {   
-            var jsonResponse = LoadAll();
-            return JsonConvert.DeserializeObject<IEnumerable<Order>>(jsonResponse);
-        }
         public void Save(string serializedOrder)
         {
             File.WriteAllText(path, serializedOrder);

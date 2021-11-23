@@ -9,7 +9,7 @@ using Webshop.DS;
 
 namespace Webshop.DA
 {
-    public class DA_Order
+    public class DA_Order : IDataAccess<Order>
     {
         private readonly DS_ShoppingCart _shoppingCart;
         private readonly DS_Order _order;

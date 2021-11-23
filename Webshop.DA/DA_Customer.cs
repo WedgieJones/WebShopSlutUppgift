@@ -9,23 +9,23 @@ using Webshop.DS;
 
 namespace Webshop.DA
 {
-    public class DA_Customer
-    {
-        private readonly DS_Customer _customer;
+	public class DA_Customer : IDataAccess<Customer>
+	{
+		private readonly DS_Customer _customer;
 
-        public DA_Customer(DS_Customer Customer )
-        {
-            _customer = Customer;
-        }
-        public IEnumerable<Customer> LoadAll()
-        {
-            var jsonResponse = _customer.LoadAll();
-            return JsonConvert.DeserializeObject<IEnumerable<Customer>>(jsonResponse);
-        }
+		public DA_Customer(DS_Customer Customer)
+		{
+			_customer = Customer;
+		}
+		public IEnumerable<Customer> LoadAll()
+		{
+			var jsonResponse = _customer.LoadAll();
+			return JsonConvert.DeserializeObject<IEnumerable<Customer>>(jsonResponse);
+		}
 
-        public Customer LoadById(int id)
-        {
-            return LoadAll().SingleOrDefault(p => p.CustomerId == id);
-        }
-    }
+		public Customer LoadById(int id)
+		{
+			return LoadAll().SingleOrDefault(p => p.CustomerId == id);
+		}
+	}
 }

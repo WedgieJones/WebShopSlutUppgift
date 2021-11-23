@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    public class DS_Customer 
+    public class DS_Customer : IDataSource<Customer>
     {
         
         public string LoadAll()
@@ -19,7 +19,7 @@ namespace Webshop.DS
             return jsonResponse;
         }
 
-		public void Save(Customer _object)
+		public void Save(string SerilizedItem)
 		{
 			throw new NotImplementedException();
 		}

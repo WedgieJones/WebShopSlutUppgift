@@ -9,6 +9,8 @@ namespace Webshop.UI.Pages
 {
     public class UserPageModel : PageModel
     {
+        //The UserPage is the page that shows the users Orders and Receipts.
+
 		private readonly DA_Customer _Customer;
 		private readonly DA_Order _Order;
 		private readonly DA_Receipt _Receipt;
@@ -29,6 +31,7 @@ namespace Webshop.UI.Pages
 
         public void OnGet(int CustomerId)
         {
+            //For the HTML page I have loaded different lists that will present info on the htmlpage. 
             CustomerList = _Customer.LoadAll().ToList();
             Customer = _Customer.LoadById(CustomerId);
             Orders = _Order.GetByCustomerIsPaid(CustomerId);

@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    public class DS_Product 
+    public class DS_Product : IDataSource<Product>
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Productjson.json";
         
@@ -18,5 +18,10 @@ namespace Webshop.DS
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         }
-    }
+
+		public void Save(string SerilizedItem)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

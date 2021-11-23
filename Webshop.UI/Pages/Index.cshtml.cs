@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Webshop.UI.Pages
 {
+	//This page is not used in the project. New indexpage = Allproducts.cshtml.cs
 	public class IndexModel : PageModel
 	{
 		private readonly ILogger<IndexModel> _logger;

@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    public class DS_Receipt 
+    public class DS_Receipt : IDataSource<Receipt>
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\Receiptsjson.json";
         
@@ -18,8 +18,6 @@ namespace Webshop.DS
             var jsonResponse = File.ReadAllText(path);
             return jsonResponse;
         }
-
-        
         public void Save(string serializedItems)
         {
             File.WriteAllText(path, serializedItems);

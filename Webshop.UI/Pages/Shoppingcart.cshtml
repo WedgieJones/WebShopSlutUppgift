@@ -27,17 +27,13 @@
 <div class="container-fluid">
          <h3>Choose user to proceed with the order</h3>
 
-    @foreach (var customer in Model.CustomerList)
-    {
-<tbody>
-    <tr>
-      <td class="item">
-         <div class="">
-         <h5 class="card-title">@customer.FullName</h5>
-         <a asp-page="Order" asp-route-customerId="@customer.CustomerId" class="btn btn-primary">Choose</a>
-      </td>
-   </tr>
-</tbody>
-}
-
 </div>
+<table>
+     @foreach (var customer in Model.CustomerList)
+            {
+                <div class="list-group">
+        <a asp-page="Order" asp-route-customerId="@customer.CustomerId" class="list-group-item list-group-item-action active">Name: @customer.FullName </a>
+       
+</div>
+            }
+</table>

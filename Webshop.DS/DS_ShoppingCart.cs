@@ -9,7 +9,7 @@ using Webshop.BL;
 
 namespace Webshop.DS
 {
-    public class DS_ShoppingCart 
+    public class DS_ShoppingCart : IDataSource<ShoppingCart>
     {
         string path = @"C:\Users\Friedrich Schwann\Desktop\GIT\repos\WebShopSlutUppgift\Webshop.DS\JsonFiles\ShoppingCartjson.json";
         

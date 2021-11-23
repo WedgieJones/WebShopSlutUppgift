@@ -9,7 +9,7 @@ using Webshop.DS;
 
 namespace Webshop.DA
 {
-    public class DA_Receipt
+    public class DA_Receipt : IDataAccess<Receipt>
     {
         private readonly DS_Receipt _Receipt;
         public DA_Receipt(DS_Receipt ds_Receipt)

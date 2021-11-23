@@ -9,7 +9,7 @@ using Webshop.DS;
 
 namespace Webshop.DA
 {
-    public  class DA_ShoppingCart
+    public  class DA_ShoppingCart : IDataAccess<ShoppingCart>
     {
         private readonly DS_ShoppingCart _shoppingcart;
 
@@ -36,6 +36,9 @@ namespace Webshop.DA
         }
         public void Delete() { _shoppingcart.Delete(); }
 
-
-    }
+		IEnumerable<ShoppingCart> IDataAccess<ShoppingCart>.LoadAll()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }
